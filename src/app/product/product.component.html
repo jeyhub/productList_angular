@@ -1,10 +1,10 @@
+<h3 *ngIf="products; else noProduct">{{title}}</h3>
 <div class="mb-3">
-  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  <input class="form-control" id="productName" aria-describedby="emailHelp" placeholder="Search product" [(ngModel)]="filterText">
   <div id="emailHelp" class="form-text">
     We'll never share your email with anyone else.
   </div>
 </div>
-<h3 *ngIf="products; else noProduct">{{title}}</h3>
 <div class="card" style="width: 18rem;">
   <ng-template #noProduct>
     <div class="alert alert-primary" role="alert">
@@ -12,7 +12,7 @@
     </div>
   </ng-template>
   <div class="row">
-    <div *ngFor="let product of products" class="card-body">
+    <div *ngFor="let product of products | productFilter:filterText" class="card-body">
       <img [src]="product.imageUrl" class="card-img-top" alt="...">
       <h5 class="card-title">{{product.name}} {{product.price | currency:'USD':true:"1.2-2"}}</h5>
       <p class="card-text">

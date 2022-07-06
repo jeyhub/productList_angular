@@ -9,6 +9,7 @@ import {Product} from "./product";
 export class ProductComponent implements OnInit {
   constructor() { }
   title = "Products";
+  filterText = "";
   products : Product[] = [
     {id:1, name:"Laptop", price:2500, categoryId:1, description:"Asus ZenBook", imageUrl:"https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1768&q=80"},
     {id:2, name:"Keyboard", price:300, categoryId:2, description:"Logitech Mx Keys", imageUrl:"https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80"},
